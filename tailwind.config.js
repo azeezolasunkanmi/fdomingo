@@ -9,6 +9,8 @@ export default {
         secondaryText: "#BBBBBB", // (Light Gray)
         accent: "#FF5722", //deep orange
         accentSecondary: "#8C271E", //deep orange
+        background: "#fafaf8",
+        text: "#454543",
       },
     },
     fontFamily: {
