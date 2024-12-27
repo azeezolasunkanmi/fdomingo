@@ -2,13 +2,19 @@ import icon1 from "../../../assets/images/icon1.png";
 import icon2 from "../../../assets/images/icon2.png";
 import icon3 from "../../../assets/images/icon3.png";
 import icon4 from "../../../assets/images/icon4.png";
+import { motion } from "motion/react";
 
 const OurProcess = () => {
   return (
     <div className="p-4 max-w-[1300px] bg-background mx-auto font-poppins my-6">
-      <h2 className="font-poppins font-semibold text-center text-text uppercase text-[35px] lg:text-[45px]">
+      <motion.h2
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="font-steelfish font-semibold text-center text-text uppercase text-[40px] lg:text-[70px]"
+      >
         Our Process
-      </h2>
+      </motion.h2>
       <p className="text-center text-text max-w-[600px] mx-auto mb-10 lg:mb-20 px-2">
         From planning to delivery, we ensure every step is seamless, capturing
         your love story in the most authentic and cinematic way possible.

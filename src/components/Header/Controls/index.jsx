@@ -1,26 +1,9 @@
 import PropTypes from "prop-types";
 import { FaCirclePause, FaCirclePlay } from "react-icons/fa6";
-import { FaArrowCircleRight } from "react-icons/fa";
 
-const Hero = ({
-  setHeroCount,
-  playStatus,
-  setPlayStatus,
-  heroData,
-  heroCount,
-}) => {
+const Controls = ({ setHeroCount, playStatus, setPlayStatus, heroCount }) => {
   return (
     <div className="p-6 md:mx-4 xl:mx-20 z-10">
-      <div className="mt-10 xl:mt-32 font-merriweather text-[50px] md:text-[75px] capitalize leading-[60px] md:leading-[80px] fade-in text-white drop-shadow-lg">
-        <h2>{heroData.text1}</h2>
-        <h2>{heroData.text2}</h2>
-      </div>
-      <div className="mt-6">
-        <button className="bg-white px-4 py-3 text-primary text-[16px] font-poppins font-medium rounded-3xl flex items-center gap-8">
-          See Our Stories <FaArrowCircleRight size={24} color="#FF5722" />
-        </button>
-      </div>
-
       <div className="absolute right-0 left-0 bottom-0 p-6 md:mx-4 xl:mx-20 flex items-center justify-between gap-4">
         <ul className="flex gap-3">
           <li
@@ -58,12 +41,11 @@ const Hero = ({
   );
 };
 
-Hero.propTypes = {
+Controls.propTypes = {
   heroCount: PropTypes.number.isRequired,
   playStatus: PropTypes.bool.isRequired,
   setHeroCount: PropTypes.func.isRequired,
   setPlayStatus: PropTypes.func.isRequired,
-  heroData: PropTypes.object.isRequired,
 };
 
-export default Hero;
+export default Controls;

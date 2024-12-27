@@ -10,15 +10,15 @@ const FeaturedStoryCard = ({ story, reverse }) => {
         reverse ? "lg:flex-row-reverse" : ""
       }`}
     >
-      <div className="lg:w-[50%] p-[5%] md:px-[8%] flex flex-col gap-8 text-white">
-        <h2 className="text-[24px] text-center font-medium font-merriweather">
+      <div className="lg:w-[50%] p-[5%] md:px-[8%] flex flex-col gap-6 text-white">
+        <h2 className="text-[45px] lg:text-[60px] font-medium font-steelfish">
           {story.name}
         </h2>
         <p className="text-[18px] font-poppins">{story.title}</p>
         <p className="text-[18px] text-secondaryText font-crimson italic">
           &quot;{story.remark}&quot;
         </p>
-        <p className="text-[18px] text-center">{story.author}</p>
+        <p className="text-[18px]">{story.author}</p>
         <button
           className="px-6 py-2 flex gap-4 items-center mx-auto text-primary font-medium rounded-md bg-secondaryText"
           onClick={() => setIsPlaying(!isPlaying)}

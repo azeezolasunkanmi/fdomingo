@@ -1,7 +1,12 @@
 import about1 from "../../assets/images/about1.jpg";
+import about2 from "../../assets/images/about2.jpeg";
+import about3 from "../../assets/images/about3.jpeg";
 import bg from "../../assets/images/backcover2.avif";
 import OurProcess from "./OurProcess";
 import Services from "./Services";
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+// import { FaXTwitter } from "react-icons/fa6";
+import { motion } from "motion/react";
 
 const AboutUs = () => {
   return (
@@ -12,15 +17,22 @@ const AboutUs = () => {
           backgroundImage: `url(${bg})`,
         }}
       >
-        <div className=" p-4">
+        {/* <div className="p-4">
           <div className="w-[100px] h-1 bg-primary rounded-3xl mt-2 mx-auto"></div>
-        </div>
+        </div> */}
         <div className="lg:flex flex-row-reverse justify-center max-w-[1300px] lg:pt-20 mx-auto p-4">
-          <div className="lg:w-[50%] text-text flex flex-col gap-6 p-4 md:px-20 bg-background rounded">
-            <div className="text-[35px] lg:text-[45px] font-semibold leading-[50px]">
-              <h2>We Are FDomingo</h2>
-              <h2>Creative Studio.</h2>
-            </div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-[50%] text-text flex flex-col gap-6 p-4 md:px-20 bg-background rounded"
+          >
+            <h2 className="text-[60px] lg:text-[90px] font-semibold font-steelfish leading-tight">
+              We Are FDomingo
+              <br />
+              Creative Studio.
+            </h2>
 
             <div className="text-[16px]">
               <p>
@@ -59,13 +71,58 @@ const AboutUs = () => {
                 <p>Clients</p>
               </div>
             </div>
-          </div>
-          <div className="lg:w-[50%] relative overflow-hidden h-[500px] p-4 md:px-20">
+          </motion.div>
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-[50%] relative overflow-hidden p-4 md:px-20"
+          >
             <img
               src={about1}
               alt="man holding camera"
-              className="w-full h-full object-cover rounded-xl z-10"
+              className="w-full object-cover rounded-xl z-10"
             />
+            <div className="flex gap-4 mt-4">
+              <img
+                src={about2}
+                alt="man holding camera"
+                className="w-[50%] h-full object-cover rounded-xl z-10"
+              />
+              <img
+                src={about3}
+                alt="man holding camera"
+                className="w-[50%] h-full object-cover rounded-xl z-10"
+              />
+            </div>
+          </motion.div>
+        </div>
+        <div className=" bg-[#c5b3a4] text-white mt-10">
+          <div className="max-w-[1300px] mx-auto flex items-center justify-between p-4 md:px-20">
+            <h2 className="font-steelfish font-semibold md:text-center text-text uppercase text-[30px] lg:text-[65px] shrink-0">
+              Connect with us
+            </h2>
+
+            <div className="flex gap-4 md:gap-8">
+              <FaFacebookF
+                size={20}
+                color="#282828"
+                className="cursor-pointer"
+              />
+              <FaInstagram
+                size={20}
+                color="#282828"
+                className="cursor-pointer"
+              />
+              <FaTiktok size={20} color="#282828" className="cursor-pointer" />
+              {/* <FaXTwitter
+                size={20}
+                color="#282828"
+                className="cursor-pointer"
+              /> */}
+              <FaYoutube size={20} color="#282828" className="cursor-pointer" />
+            </div>
           </div>
         </div>
       </div>

@@ -1,30 +1,34 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../../assets/images/logo/logoWhite.png";
-import { navLinks } from "../../../constants";
+
 import { IoMenu } from "react-icons/io5";
 
 const NavBar = () => {
+  const location = useLocation();
+  const isActive = path => location.pathname === path;
+
   return (
-    <div className="flex items-center justify-between p-6 lg: z-10 md:mx-4 xl:mx-20">
+    <div className="flex items-center justify-center gap-8 p-6 lg: z-10 md:mx-4 xl:mx-20">
+      <Link
+        to="/"
+        className={`px-4 py-2 font-poppins text-[18px] font-medium text-white hover:text-accent ${
+          isActive("/") ? "text-accent font-semibold" : "text-white"
+        }`}
+      >
+        Home
+      </Link>
       <div className="w-[50px] lg:w-[80px]">
         <img src={logo} alt="logo" />
       </div>
-      <nav className="hidden lg:flex items-center gap-4 font-poppins text-[18px] font-medium text-white">
-        {navLinks.map((link, i) => (
-          <span key={i}>
-            <Link
-              to={link.to}
-              className={`${
-                link.to === "#contact"
-                  ? "bg-primary text-accent rounded-3xl"
-                  : ""
-              } px-4 py-2 hover:text-accent`}
-            >
-              {link.title}
-            </Link>
-          </span>
-        ))}
-      </nav>
+      <Link
+        to="/portfolio"
+        className={`px-4 py-2 font-poppins text-[18px] font-medium text-white hover:text-accent ${
+          isActive("/portfolio") ? "text-accent font-semibold" : "text-white"
+        }`}
+      >
+        Portfolio
+      </Link>
+
       <div className="lg:hidden cursor-pointer">
         <IoMenu color="white" size={30} />
       </div>

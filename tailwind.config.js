@@ -10,13 +10,14 @@ export default {
         accent: "#FF5722", //deep orange
         accentSecondary: "#8C271E", //deep orange
         background: "#fafaf8",
-        text: "#454543",
+        text: "#282828",
       },
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
       merriweather: ["Merriweather", "serif"],
       crimson: ["Crimson Text", "serif"],
+      steelfish: ["Steelfish", "sans-serif"],
     },
   },
   plugins: [],

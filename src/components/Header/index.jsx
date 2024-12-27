@@ -1,14 +1,14 @@
 import Background from "./Background";
-import NavBar from "./NavBar";
-import Hero from "./Hero";
-import { heroData } from "../../constants";
+// import NavBar from "./NavBar";
+import Controls from "./Controls";
+
 import { useEffect, useState } from "react";
 
 const Header = () => {
   const [heroCount, setHeroCount] = useState(0);
   const [playStatus, setPlayStatus] = useState(false);
 
-  console.log(heroCount);
+  // console.log(heroCount);
   useEffect(() => {
     if (!playStatus) {
       const interval = setInterval(() => {
@@ -20,16 +20,21 @@ const Header = () => {
   }, [playStatus]);
 
   return (
-    <div className="relative h-screen overflow-hidden">
-      <Background playStatus={playStatus} heroCount={heroCount} />
-      <NavBar />
-      <Hero
-        setHeroCount={setHeroCount}
-        setPlayStatus={setPlayStatus}
-        playStatus={playStatus}
-        heroData={heroData[heroCount]}
-        heroCount={heroCount}
-      />
+    <div className="p-4 ">
+      <h1 className="text-[65px] lg:text-[96px] text-text font-steelfish leading-tight mb-6">
+        THE PERFECT
+        <br /> WEDDING EXPERIENCE
+      </h1>
+
+      <div id="top" className="relative rounded-lg h-[70vh] overflow-hidden">
+        <Background playStatus={playStatus} heroCount={heroCount} />
+        <Controls
+          setHeroCount={setHeroCount}
+          setPlayStatus={setPlayStatus}
+          playStatus={playStatus}
+          heroCount={heroCount}
+        />
+      </div>
     </div>
   );
 };

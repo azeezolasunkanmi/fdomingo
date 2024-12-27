@@ -12,7 +12,7 @@ const Footer = () => {
       }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
-      <p className="lg:absolute lg:-top-28 lg:right-6 lg:max-w-[500px]  p-6 bg-[#c5b3a4] text-white text-[16px] font-crimson italic xl:text-[18px]">
+      <p className="lg:absolute lg:-top-28 lg:right-6 lg:max-w-[600px]  p-6 bg-[#c5b3a4] text-white text-[16px] font-crimson italic xl:text-[18px]">
         Documenting destination weddings and real love stories in cinematic
         style. We don&apos;t sell videos, we craft films. Amid all the beauty,
         the laughter, the love and tears of any wedding day, we create a
@@ -23,8 +23,8 @@ const Footer = () => {
         It is about transforming the events of your wedding into a living,
         lasting memory.
       </p>
-      <div className="lg:flex gap-8  py-2 lg:py-20 drop-shadow-lg">
-        <div className="text-white capitalize text-[18px] font-crimson border-r-4 px-4 mt-10">
+      <div className="lg:flex gap-8 py-2 lg:py-20 drop-shadow-lg">
+        <div className="text-white capitalize text-[18px] font-crimson border-r-4 px-4 mt-10 md:mt-20">
           <img src={logo} alt="logo" className="w-[100px]" />
           <div className="flex gap-1 mt-4 font-semibold uppercase text-[14px]">
             <span className="">Video production -</span>
@@ -39,7 +39,10 @@ const Footer = () => {
             <FaYoutube size={20} color="#fff" className="cursor-pointer" />
           </div>
         </div>
-        <div className="text-white flex flex-col gap-4 font-poppins px-4 mt-10">
+        <div
+          id="contact"
+          className="text-white flex flex-col gap-4 font-poppins px-4 mt-10 md:mt-20"
+        >
           <h2 className="text-[22px] font-semibold">Contact Us</h2>
 
           <p className="flex items-center gap-2">
@@ -60,11 +63,11 @@ const Footer = () => {
             </a>
           </p>
         </div>
-        <div className="text-white flex flex-col gap-4 font-poppins px-4 mt-10">
+        <div className="text-white flex flex-col gap-4 font-poppins px-4 mt-10 md:mt-20">
           <h2 className="text-[22px] font-semibold">Quick Links</h2>
 
           <p className="">
-            <a href="#" className="">
+            <a href="#top" className="">
               Back to Top
             </a>
           </p>

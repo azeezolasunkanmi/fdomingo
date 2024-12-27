@@ -2,7 +2,7 @@ export const navLinks = [
   { title: "Home", to: "/" },
   { title: "portfolio", to: "portfolio" },
   // { title: "services", to: "services" },
-  { title: "Contact Us", to: "#contact" },
+  // { title: "Contact Us", to: "#contact" },
 ];
 
 export const heroData = [
