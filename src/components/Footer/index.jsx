@@ -12,7 +12,7 @@ const Footer = () => {
       }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
-      <p className="lg:absolute lg:-top-28 lg:right-6 lg:max-w-[600px]  p-6 bg-[#c5b3a4] text-white text-[16px] font-crimson italic xl:text-[18px]">
+      <p className="p-6 bg-[#c5b3a4] text-white text-[16px] font-crimson italic xl:text-[20px]">
         Documenting destination weddings and real love stories in cinematic
         style. We don&apos;t sell videos, we craft films. Amid all the beauty,
         the laughter, the love and tears of any wedding day, we create a
@@ -23,14 +23,10 @@ const Footer = () => {
         It is about transforming the events of your wedding into a living,
         lasting memory.
       </p>
-      <div className="lg:flex gap-8 py-2 lg:py-20 drop-shadow-lg">
+      <div className="lg:flex gap-8 justify-center py-2 lg:py-10 drop-shadow-lg">
         <div className="text-white capitalize text-[18px] font-crimson border-r-4 px-4 mt-10 md:mt-20">
           <img src={logo} alt="logo" className="w-[100px]" />
-          <div className="flex gap-1 mt-4 font-semibold uppercase text-[14px]">
-            <span className="">Video production -</span>
-            <span className="">Video editing -</span>
-            <span className="">Live Stream</span>
-          </div>
+
           <div className="flex gap-8 mt-4">
             <FaFacebookF size={20} color="#fff" className="cursor-pointer" />
             <FaInstagram size={20} color="#fff" className="cursor-pointer" />
@@ -77,10 +73,16 @@ const Footer = () => {
             </a>
           </p>
         </div>
+        <div className="text-white flex flex-col gap-4 font-poppins px-4 mt-10 md:mt-20">
+          <h2 className="text-[22px] font-semibold">Services</h2>
+
+          <span className="">Video production</span>
+          <span className="">Video editing</span>
+          <span className="">Live Stream</span>
+        </div>
       </div>
-      <div className="flex justify-between items-center text-white font-poppins text-[14px] p-2 lg:px-20 drop-shadow-lg mt-10">
+      <div className="text-center text-white font-poppins text-[14px] p-2 drop-shadow-lg mt-10">
         <p>©2024 FDomingo • All Rights Reserved</p>
-        <p>Created by Zee</p>
       </div>
     </div>
   );

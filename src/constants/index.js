@@ -5,15 +5,6 @@ export const navLinks = [
   // { title: "Contact Us", to: "#contact" },
 ];
 
-export const heroData = [
-  // { text1: "capture your", text2: "best moments" },
-  { text1: "Every Detail", text2: "Perfectly Captured" },
-  { text1: "Relive Every", text2: "Precious Moment" },
-  { text1: "Your Day", text2: "Your Story" },
-  // { text1: "Telling Stories", text2: "" },
-  // { text1: "Turning Moments", text2: "Into Memories" },
-];
-
 import vid1 from "../assets/videos/video2.mp4";
 import vid2 from "../assets/videos/video1.mp4";
 import vid3 from "../assets/videos/video3.mp4";

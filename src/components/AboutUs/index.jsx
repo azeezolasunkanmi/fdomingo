@@ -28,7 +28,7 @@ const AboutUs = () => {
             transition={{ duration: 0.8 }}
             className="lg:w-[50%] text-text flex flex-col gap-6 p-4 md:px-20 bg-background rounded"
           >
-            <h2 className="text-[60px] lg:text-[90px] font-semibold font-steelfish leading-tight">
+            <h2 className="text-[60px] xl:text-[90px] font-semibold font-steelfish leading-tight">
               We Are FDomingo
               <br />
               Creative Studio.
@@ -49,21 +49,21 @@ const AboutUs = () => {
               </p>
             </div>
             <div className="flex justify-between items-center mb-6 font-medium text-primary">
-              <div className="p-2">
+              <div className="p-4 backdrop-blur-md bg-white/20 rounded-lg shadow-lg border border-white/30">
                 <p className="text-accentSecondary font-normal text-[28px]">
                   140+
                 </p>
                 <p>Finished</p>
                 <p>Projects</p>
               </div>
-              <div className="p-2">
+              <div className="p-4 backdrop-blur-md bg-white/20 rounded-lg shadow-lg border border-white/30">
                 <p className="text-accentSecondary font-normal text-[28px]">
                   15+
                 </p>
                 <p>Countries</p>
                 <p>Visited</p>
               </div>
-              <div className="p-2">
+              <div className="p-4 backdrop-blur-md bg-white/20 rounded-lg shadow-lg border border-white/30">
                 <p className="text-accentSecondary font-normal text-[28px]">
                   500+
                 </p>

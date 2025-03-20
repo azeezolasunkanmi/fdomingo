@@ -3,13 +3,18 @@ import FeaturedStoryCard from "../../components/FeaturedStory/FeaturedStoryCard"
 import { featuredStoryData } from "../../constants";
 import Footer from "../../components/Footer";
 import Collaborate from "../../components/Collaborate";
-// import NavBar from "../../components/Header/NavBar";
+import NavBar from "../../components/Header/NavBar";
 
 const Portfolio = () => {
   return (
     <div>
+      {/* Fixed NavBar */}
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <NavBar />
+      </div>
+
       <div
-        className={`relative bg-no-repeat bg-cover bg-center py-16 md:py-24`}
+        className={`relative bg-no-repeat bg-cover bg-center py-16 md:py-24 mt-20`}
         style={{
           backgroundImage: `url(${bg})`,
         }}
@@ -21,7 +26,9 @@ const Portfolio = () => {
             Portfolio
           </h2>
           <p className="text-center text-white px-8 md:w-[70%] xl:w-[60%] mx-auto lg:text-[18px] z-50">
-            Short description about the heading
+            Explore our diverse collection of cinematic wedding films and real
+            love stories, each crafted with passion and precision to capture the
+            essence of unforgettable moments.
           </p>
         </div>
       </div>
