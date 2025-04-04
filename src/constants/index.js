@@ -6,8 +6,8 @@ export const navLinks = [
 ];
 
 import vid1 from "../assets/videos/video2.mp4";
-// import vid2 from "../assets/videos/video1.mp4";
-// import vid3 from "../assets/videos/video3.mp4";
+import vid2 from "../assets/videos/video1.mp4";
+import vid3 from "../assets/videos/video3.mp4";
 
 export const featuredStoryData = [
   {
@@ -25,7 +25,7 @@ export const featuredStoryData = [
     remark:
       "Fdomingo and her team are the best! They got amazing shots of my wedding throughout the day and we barely noticed they were there! They are so easy to communicate with and answered emails so quickly!",
     author: "-Chima and Amara",
-    video: vid1,
+    video: vid2,
   },
   {
     name: "Benji + Racheal",
@@ -33,6 +33,6 @@ export const featuredStoryData = [
     remark:
       "We couldn't have asked for a better Videographer,  captured our wedding day perfectly and the drone shots are amazing - spring for those! Having our videos to watch over and over again is a wonderful way to remember that special day",
     author: "-Benji and Racheal",
-    video: vid1,
+    video: vid3,
   },
 ];
