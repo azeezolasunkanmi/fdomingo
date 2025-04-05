@@ -2,8 +2,6 @@ import PropTypes from "prop-types";
 import bg1 from "../../../assets/images/bg1.jpg";
 import bg2 from "../../../assets/images/bg2.avif";
 import bg3 from "../../../assets/images/bg3.jpg";
-import vid1 from "../../../../public/OLAMIDE&RILIWANWEDDINGHIGHLIGHT.mp4";
-// import vid1 from "../../../assets/videos/video1.mp4";
 
 const Background = ({ playStatus, heroCount }) => {
   const css = "absolute inset-0 w-full h-full object-cover -z-50";
@@ -12,7 +10,7 @@ const Background = ({ playStatus, heroCount }) => {
     <>
       {playStatus ? (
         <video className={`${css} fade-in`} autoPlay muted loop>
-          <source src={vid1} type="video/mp4" />
+          <source src="/OLAMIDE&RILIWANWEDDINGHIGHLIGHT.mp4" type="video/mp4" />
         </video>
       ) : (
         <img
