@@ -1,7 +1,18 @@
+import { useState } from "react";
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Collaborate = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("idle");
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("submitting");
+    e.target.submit();
+  };
+
   return (
     <div className="p-4 max-w-[1300px] bg-background mx-auto font-poppins my-6 md:my-32">
       <div className="md:mx-10 lg:flex justify-center gap-20">
@@ -21,33 +32,58 @@ const Collaborate = () => {
           </div>
         </div>
         <div className="mt-10 lg:w-[47%]">
-          <form action="">
+          <form
+            action="https://formsubmit.co/acb984c9b768ab2d589aed672a34cb98"
+            method="POST"
+            onSubmit={handleSubmit}
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Collaboration Request!"
+            />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="http://localhost:5173/" />
+            <input type="text" name="_honey" style={{ display: "none" }} />
+
             <textarea
               name="message"
               rows="5"
               placeholder="Your Message"
-              className="w-full border p-4 outline-none"
+              className="w-full border p-4 outline-none focus:border-primary disabled:opacity-50"
               required
+              disabled={isSubmitting}
             ></textarea>
             <div className="lg:flex gap-4">
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
-                className="w-full border p-4 mt-2 outline-none"
+                className="w-full border p-4 mt-2 outline-none focus:border-primary disabled:opacity-50"
                 required
+                disabled={isSubmitting}
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email"
-                className="w-full border p-4 mt-2 outline-none"
+                className="w-full border p-4 mt-2 outline-none focus:border-primary disabled:opacity-50"
                 required
+                disabled={isSubmitting}
               />
             </div>
-            <button className="w-full border p-4 mt-2 lg:mt-4 bg-primary text-white uppercase">
-              Send
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full border p-4 mt-2 lg:mt-4 bg-primary text-white uppercase disabled:opacity-50 hover:bg-primary/90"
+            >
+              {isSubmitting ? "Sending..." : "Send"}
             </button>
+            {submitStatus === "submitting" && (
+              <p className=" hidden mt-4 text-primary">
+                Sending your message...
+              </p>
+            )}
           </form>
         </div>
       </div>

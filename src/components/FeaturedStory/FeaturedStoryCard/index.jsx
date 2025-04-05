@@ -1,9 +1,16 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { FaCirclePause, FaCirclePlay } from "react-icons/fa6";
+import { FaSpinner } from "react-icons/fa";
 
 const FeaturedStoryCard = ({ story, reverse }) => {
-  const [isPlaying, setIsPlaying] = useState(false); // Control video play state
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadedData = () => {
+    setIsLoading(false);
+  };
+
   return (
     <div
       className={`lg:flex h-auto lg:h-[500px] ${
@@ -28,14 +35,22 @@ const FeaturedStoryCard = ({ story, reverse }) => {
         </button>
       </div>
       <div className="lg:w-[50%] lg:h-[500px] h-[300px] relative overflow-hidden">
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+            <FaSpinner className="animate-spin text-white" size={40} />
+          </div>
+        )}
         <video
           className="w-full h-full object-cover"
           controls={false}
           muted
           loop
+          preload="auto"
+          playsInline
+          onLoadedData={handleLoadedData}
           ref={video => {
             if (video) {
-              isPlaying ? video.play() : video.pause(); // Dynamically play/pause
+              isPlaying ? video.play() : video.pause();
             }
           }}
         >
