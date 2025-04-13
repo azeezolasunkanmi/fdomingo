@@ -43,7 +43,11 @@ const Collaborate = () => {
               value="New Collaboration Request!"
             />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="http://localhost:5173/" />
+            <input
+              type="hidden"
+              name="_next"
+              value="http://fdomingo.vercel.app"
+            />
             <input type="text" name="_honey" style={{ display: "none" }} />
 
             <textarea

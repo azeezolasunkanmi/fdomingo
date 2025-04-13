@@ -9,6 +9,15 @@ const Background = ({ playStatus, heroCount }) => {
   const [isVideoLoading, setIsVideoLoading] = useState(true);
   const css = "absolute inset-0 w-full h-full object-cover -z-50";
 
+  const handleVideoLoad = e => {
+    setIsVideoLoading(false);
+    // Explicitly play the video for iOS
+    const video = e.target;
+    video.play().catch(error => {
+      console.log("Autoplay failed:", error);
+    });
+  };
+
   return (
     <>
       {playStatus ? (
@@ -25,7 +34,8 @@ const Background = ({ playStatus, heroCount }) => {
             loop
             preload="auto"
             playsInline
-            onLoadedData={() => setIsVideoLoading(false)}
+            onLoadedData={handleVideoLoad}
+            poster="/video-poster.jpg"
           >
             <source
               src="/OLAMIDE&RILIWANWEDDINGHIGHLIGHT.mp4"

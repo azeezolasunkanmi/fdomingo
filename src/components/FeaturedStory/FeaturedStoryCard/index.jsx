@@ -7,8 +7,13 @@ const FeaturedStoryCard = ({ story, reverse }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const handleLoadedData = () => {
+  const handleLoadedData = e => {
     setIsLoading(false);
+    // Explicitly play the video for iOS
+    const video = e.target;
+    video.play().catch(error => {
+      console.log("Autoplay failed:", error);
+    });
   };
 
   return (
