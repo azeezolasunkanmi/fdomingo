@@ -1,20 +1,15 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { FaCirclePause, FaCirclePlay } from "react-icons/fa6";
-import { FaSpinner } from "react-icons/fa";
+// import { FaSpinner } from "react-icons/fa";
 
 const FeaturedStoryCard = ({ story, reverse }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  const handleLoadedData = e => {
-    setIsLoading(false);
-    // Explicitly play the video for iOS
-    const video = e.target;
-    video.play().catch(error => {
-      console.log("Autoplay failed:", error);
-    });
-  };
+  // const handleLoadedData = () => {
+  //   setIsLoading(false);
+  // };
 
   return (
     <div
@@ -40,11 +35,11 @@ const FeaturedStoryCard = ({ story, reverse }) => {
         </button>
       </div>
       <div className="lg:w-[50%] lg:h-[500px] h-[300px] relative overflow-hidden">
-        {isLoading && (
+        {/* {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/50">
             <FaSpinner className="animate-spin text-white" size={40} />
           </div>
-        )}
+        )} */}
         <video
           className="w-full h-full object-cover"
           controls={false}
@@ -52,7 +47,7 @@ const FeaturedStoryCard = ({ story, reverse }) => {
           loop
           preload="auto"
           playsInline
-          onLoadedData={handleLoadedData}
+          // onLoadedData={handleLoadedData}
           ref={video => {
             if (video) {
               isPlaying ? video.play() : video.pause();
