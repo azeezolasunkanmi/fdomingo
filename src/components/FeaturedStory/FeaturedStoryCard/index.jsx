@@ -1,9 +1,17 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FaCirclePause, FaCirclePlay } from "react-icons/fa6";
 
 const FeaturedStoryCard = ({ story, reverse }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  // Effect hook to control the video play/pause logic
+  useEffect(() => {
+    if (videoRef.current) {
+      isPlaying ? videoRef.current.play() : videoRef.current.pause();
+    }
+  }, [isPlaying]);
 
   return (
     <div className={`lg:flex h-auto ${reverse ? "lg:flex-row-reverse" : ""}`}>
@@ -18,27 +26,24 @@ const FeaturedStoryCard = ({ story, reverse }) => {
         <p className="text-[18px]">{story.author}</p>
         <button
           className="px-6 py-2 flex gap-4 items-center mx-auto text-primary font-medium rounded-md bg-secondaryText"
-          onClick={() => setIsPlaying(!isPlaying)}
+          onClick={() => setIsPlaying(prev => !prev)}
+          aria-label={isPlaying ? "Pause Film" : "Play Film"}
         >
-          {isPlaying ? `Pause Film` : `Play Film `}{" "}
+          {isPlaying ? `Pause Film` : `Play Film`}{" "}
           {isPlaying ? <FaCirclePause size={24} /> : <FaCirclePlay size={24} />}
         </button>
       </div>
+
       <div className="lg:w-[50%] h-[500px] relative overflow-hidden">
         <video
+          ref={videoRef}
           className="w-full h-full object-cover"
           controls={false}
           muted
           loop
-          preload="none"
+          preload="auto"
           playsInline
-          poster={`${story.video}#t=1`}
-          ref={video => {
-            if (video) {
-              video.currentTime = 1; // Set initial frame
-              isPlaying ? video.play() : video.pause();
-            }
-          }}
+          aria-label="Story video"
         >
           <source src={story.video} type="video/mp4" />
         </video>
@@ -47,8 +52,15 @@ const FeaturedStoryCard = ({ story, reverse }) => {
   );
 };
 
+// Stricter prop validation
 FeaturedStoryCard.propTypes = {
-  story: PropTypes.object.isRequired,
+  story: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    remark: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    video: PropTypes.string.isRequired,
+  }).isRequired,
   reverse: PropTypes.bool,
 };
 
