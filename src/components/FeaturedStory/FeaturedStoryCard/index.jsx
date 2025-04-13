@@ -30,11 +30,12 @@ const FeaturedStoryCard = ({ story, reverse }) => {
           controls={false}
           muted
           loop
-          preload="metadata"
+          preload="none"
           playsInline
-          poster={`${story.video}#t=0.1`}
+          poster={`${story.video}#t=1`}
           ref={video => {
             if (video) {
+              video.currentTime = 1; // Set initial frame
               isPlaying ? video.play() : video.pause();
             }
           }}
