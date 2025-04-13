@@ -1,22 +1,12 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { FaCirclePause, FaCirclePlay } from "react-icons/fa6";
-// import { FaSpinner } from "react-icons/fa";
 
 const FeaturedStoryCard = ({ story, reverse }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // const handleLoadedData = () => {
-  //   setIsLoading(false);
-  // };
 
   return (
-    <div
-      className={`lg:flex h-auto lg:h-[500px] ${
-        reverse ? "lg:flex-row-reverse" : ""
-      }`}
-    >
+    <div className={`lg:flex h-auto ${reverse ? "lg:flex-row-reverse" : ""}`}>
       <div className="lg:w-[50%] p-[5%] md:px-[8%] flex flex-col gap-6 text-white">
         <h2 className="text-[45px] lg:text-[60px] font-medium font-steelfish">
           {story.name}
@@ -34,20 +24,15 @@ const FeaturedStoryCard = ({ story, reverse }) => {
           {isPlaying ? <FaCirclePause size={24} /> : <FaCirclePlay size={24} />}
         </button>
       </div>
-      <div className="lg:w-[50%] lg:h-[500px] h-[300px] relative overflow-hidden">
-        {/* {isLoading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-            <FaSpinner className="animate-spin text-white" size={40} />
-          </div>
-        )} */}
+      <div className="lg:w-[50%] h-[500px] relative overflow-hidden">
         <video
           className="w-full h-full object-cover"
           controls={false}
           muted
           loop
-          preload="auto"
+          preload="metadata"
           playsInline
-          // onLoadedData={handleLoadedData}
+          poster={`${story.video}#t=0.1`}
           ref={video => {
             if (video) {
               isPlaying ? video.play() : video.pause();
