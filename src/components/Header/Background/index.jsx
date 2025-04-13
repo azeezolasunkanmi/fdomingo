@@ -37,10 +37,7 @@ const Background = ({ playStatus, heroCount }) => {
             onLoadedData={handleVideoLoad}
             poster="/video-poster.jpg"
           >
-            <source
-              src="/OLAMIDE&RILIWANWEDDINGHIGHLIGHT.mp4"
-              type="video/mp4"
-            />
+            <source src="/vid1.mp4" type="video/mp4" />
           </video>
         </>
       ) : (
