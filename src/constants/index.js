@@ -27,6 +27,6 @@ export const featuredStoryData = [
     remark:
       "We couldn't have asked for a better Videographer,  captured our wedding day perfectly and the drone shots are amazing - spring for those! Having our videos to watch over and over again is a wonderful way to remember that special day",
     author: "-Benji and Racheal",
-    video: "/CHISOM&KINGSLEYWEDDINGHIGHLIGHT.mp4",
+    video: "/teels.mp4",
   },
 ];

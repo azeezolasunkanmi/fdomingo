@@ -14,8 +14,8 @@ const Collaborate = () => {
   };
 
   return (
-    <div className="p-4 max-w-[1300px] bg-background mx-auto font-poppins my-6 md:my-32">
-      <div className="md:mx-10 lg:flex justify-center gap-20">
+    <div className="p-4 w-full max-w-[1300px] bg-background mx-auto font-poppins my-6 md:my-32 overflow-x-hidden">
+      <div className="md:mx-4 lg:mx-10 lg:flex justify-center gap-20">
         <div className="flex flex-col uppercase font-steelfish py-4 lg:w-[47%] lg:text-right">
           <p className="text-text font-poppins md:text-[18px]">Collaborate</p>
           <div className="text-[60px] lg:text-[90px] font-bold text-primary leading-tight">
